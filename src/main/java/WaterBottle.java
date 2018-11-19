@@ -10,7 +10,19 @@ public class WaterBottle {
         return volume;
     }
 
-    public void drink() {
-        this.volume -= 10;
+    public boolean drink() {
+        if (this.volume >= 10){
+            this.volume -= 10;
+            return true;
+        }
+        return false;
+    }
+
+    public void empty() {
+        this.volume = 0;
+    }
+
+    public void fill() {
+        this.volume = 100;
     }
 }
