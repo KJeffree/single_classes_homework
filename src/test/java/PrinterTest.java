@@ -4,11 +4,11 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class PrinterTest {
-
     private Printer printer;
+
     @Before
     public void before(){
-        printer = new Printer(50, 200);
+        printer = new Printer();
     }
 
     @Test
@@ -28,9 +28,9 @@ public class PrinterTest {
     }
 
     @Test
-    public void canRefilPrinter(){
+    public void canRefillPrinter(){
         printer.print(10, 2);
-        printer.refill();
+        printer.refillPaper();
         assertEquals(50, printer.getPaperLeft());
     }
 
@@ -43,6 +43,13 @@ public class PrinterTest {
     public void canUseToner(){
         printer.print(10, 2);
         assertEquals(180, printer.getTonerLevel());
+    }
+
+    @Test
+    public void canRefillToner(){
+        printer.print(10, 2);
+        printer.refillToner();
+        assertEquals(200, printer.getTonerLevel());
     }
 
 }

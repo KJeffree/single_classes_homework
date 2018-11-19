@@ -2,9 +2,9 @@ public class Printer {
     private int paperLeft;
     private int tonerLevel;
 
-    public Printer(int paperLeft, int tonerLevel){
-        this.paperLeft = paperLeft;
-        this.tonerLevel = tonerLevel;
+    public Printer(){
+        this.paperLeft = 50;
+        this.tonerLevel = 200;
     }
 
     public int getPaperLeft() {
@@ -22,11 +22,16 @@ public class Printer {
         }
     }
 
-    public void refill() {
+    public void refillPaper() {
         this.paperLeft = 50;
     }
 
     public int getTonerLevel() {
         return tonerLevel;
+    }
+
+
+    public void refillToner() {
+        this.tonerLevel = 200;
     }
 }
